@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="panier de commande de ces jolies peluches. Formulaire de contact pour l'acheteur">
+        
+        <meta property="og:site_name" content="Orinoco"/>
+        <meta property="og:type" content="site web"/>
+        <meta property="og:url" content="https://chaplin16.github.io/RamosAurore_5_28122020/">
+        <meta property="og:title" content="acheter douceur et calins avec cet adorable ourson affectueux"/>
+        <meta property="og:description" content="beaucoup de calins et d affection de la part de ces peluches qui feront le bonheur de tous" />
+        
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+        <title>orderProduct</title>
+    </head>
+
+    <body>
+    <!--header-->
+        <header class="container-fluid text-center bg-secondary">
+            <figure class="figure w-50">
+                <img class="img-fluid img-thumbnail " src="img/teddyBear-header.jpg" alt="nounours">
+            </figure>
+            <div class="row">
+                <nav class="col navbar navbar-expand navbar-dark">
+                    <h1>
+                        <img class="navbar-brand img-fluid" src="img/logoOrinoco.png" width="250" alt="logo d'Onorico">
+                    </h1>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <ul class="navbar-nav font-weight-bold w-100 justify-content-end lead">
+                        <li class="nav-item active">
+                            <a class="nav-link text-warning" href="index.html">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-warning" href="#">Panier</a>
+                            <img class="ml-3" src="img/cart_icon_128475.svg" alt="panier des achats" />
+                            <div class="dropdown">
+                                <div id="cart">
+                                    <p id="quantity-in-cart"></p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>            
+                </nav>
+            </div>
+        </header>
+
+    <!--main avec panier et formulaire de contact-->
+        <main>
+            <div class="jumbotron w-100 mb-0" style="background-image: url(img/background-plush3.jpg);">
+        <!--le panier-->
+                <div class="containerOrder p-1 ml-md-3 mr-md-3 ml-lg-5 mr-lg-5">
+                    <h4 class="font-weight-bold pl-4">Aperçu de votre panier</h4>
+                    <div class="table_box_panier mt-4 ml-md-5 mr-md-5 ">
+                    <!--contient le tableau-->
+                        <table class="table border">
+                        <!--entete tableau-->
+                            <thead class="bg-warning">
+                                <tr class="">
+                                    <th class="d-none d-md-block border-warning"></th>
+                                    <th class="pl-1">Articles</th>
+                                    <th class="pr-0">Prix unitaire</th>
+                                    <th class="pr-0">Couleur</th>
+                                    <th>Quantité</th>
+                                    <th class="text-center">Prix Total</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="cart-tablebody">
+                                <!--lignes de commande sur le js orderProduct.js-->
+                            </tbody>
+                        </table>
+                        <input type="reset" id="resetBasketAll" class="btn btn-warning float-right border-dark font-weight-bold mb-4 ml-1" name="reset" value="vider le panier"/>
+                    </div>
+                </div>
+            <!--fin du panier-->
+
+            <!--formulaire de contact-->
+                <div class="containerForm ml-3 pt-5 ml-lg-5 mr-lg-5">
+                    <h4 class="font-weight-bold pl-3">Formulaire de contact</h4>
+                    <form action="http://localhost:3000/api/teddies/order" method="post" name="myForm" class="row g-3 mt-3 ml-4 mr-5" id="form">
+                        <div class="col-md-6">
+                            <label for="userName" class="form-label font-weight-bold">Nom</label>
+                            <input type="text" pattern ="[A-zéèêëï]{2,30}" class="form-control" id="userName" name="userName" title="Veuillez n'écrire que des lettres" required>
+                        </div> 
+                        <div class="col-md-6">
+                            <label for="userLastName" class="form-label font-weight-bold">Prenom</label>
+                            <input type="text" pattern ="[A-zéèêëîï]{2,30}" class="form-control" id="userLastName" name="userLastName" title="Veuillez n'écrire que des lettres" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="userEmail" class="form-label font-weight-bold">Email</label>
+                            <input type="email" class="form-control" id="userEmail" placeholder="mail@turquoise.fr" name="userEmail" title="Veuillez écrire un mail valide" required>
+                        </div>
+                        <div class="col-12">
+                            <label for="userAdress" class="form-label font-weight-bold">Adresse</label>
+                            <input type="text" pattern="[A-z0-9-_çàâéèeîïù \']{10,100}" class="form-control" id="userAdress" placeholder=" 123 rue du lac enchanté" name="userAdress" title="Veuillez écrire une adresse valide" required>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="userCity" class="form-label font-weight-bold">Ville</label>
+                            <input type="text" pattern ="[A-zéèêëîï]{1,40}" class="form-control" id="userCity" name="userCity" title="Veuillez écrire un nom de ville valide" required>
+                        </div>
+                        <div class="form-group col-12 pt-5">
+                            <div class="form-check">
+                                <input class="check-control" type="checkbox" value="no" id="cgu" name="cgu" required>
+                                <label class="form-check-label font-weight-bold" for="cgu" >
+                                    J'accepte les conditions générales de vente
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-6 mt-3 container">
+                            <input type="submit" id="btnSubmit" class="btn btn-warning border-dark font-weight-bold mb-4 ml-1" name="submit" value="Envoyer">
+                        </div>
+                        <div class="col-6 mt-3 container">
+                            <input type="reset" id="btnReset" class="btn btn-warning float-right border-dark font-weight-bold mb-4 ml-1" name="reset" value="Réinitialiser le formulaire">
+                        </div>
+                    </form>
+                </div> 
+            </div>    
+        </main>
+    <!--fin du formulaire de contact"-->
+
+    <!---Footer -->
+        <footer class="bg-secondary container-fluid pb-3">
+            <div class="col pt-4">
+                <ul class="list-inline text-center my-4 ">
+                    <li class="list-inline-item"><a href="#" class="text-warning font-weight-bold">À propos</a></li>
+                    <li class="list-inline-item"><a href="#" class="text-warning font-weight-bold">Vie privée</a></li>
+                    <li class="list-inline-item"><a href="#" class="text-warning font-weight-bold">Conditions d'utilisations</a></li>
+                </ul> 
+            </div>
+        </footer>
+    <!--mes scripts-->
+        <script src="js/config.js"></script>
+        <script src="js/calculQuantity.js"></script>
+        <script src="js/order.js"></script>
+        <script src="js/form.js"></script>
+        <script src="js/manageBasket.js"></script>
+
+    <!--script de bootstrap et jquery-->
+        <script src="js/jquery.js"></script>
+        <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+    </body>
+</html>

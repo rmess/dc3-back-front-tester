@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Magnifiques peluches personnalisables. Douceur et calins assurés. Plaisir d'offrir ou envie de se faire plaisir. Différentes coloris pour ces beaux oursons en peluche">
+        
+        <meta property="og:site_name" content="Orinoco"/>
+        <meta property="og:type" content="site web"/>
+        <meta property="og:url" content="https://chaplin16.github.io/RamosAurore_5_28122020/">
+        <meta property="og:title" content="Magnifiques ours en peluche personnalisables"/>
+        <meta property="og:description" content="offrir ou se faire plaisir avec ces oursons doux et adorables" />
+
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+        <title>Accueil</title>
+    </head>
+
+    <body>
+    <!-- Header -->
+        <header class="container-fluid text-center bg-secondary">
+            <figure class="figure w-50 ">
+                <img class="img-fluid img-thumbnail border border-warning" src="img/teddyBear-header.jpg" alt="nounours">
+            </figure>
+            <div class="row">
+                <nav class="col navbar navbar-expand navbar-dark">
+                        <img class="navbar-brand img-fluid" src="img/logoOrinoco.png" width="250" alt="logo Orinoco"/>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <ul class="navbar-nav font-weight-bold w-100 justify-content-end lead">
+                        <li class="nav-item active">
+                            <a class="nav-link text-warning" href="index.html">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-warning" href="orderAndForm.html">Panier</a>
+                            <img class="ml-3" src="img/cart_icon_128475.svg" alt="panier des achats" />
+                            <div class="dropdown">
+                                <div id="cart">
+                                    <p id="quantity-in-cart"></p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+    <!-- Main -->
+        <main class="container-flex">
+            <div class="jumbotron w-100 mb-0" style="background-image: url(img/background-plush1.jpg);">
+                <div class="container for-about text-center">
+                    <h1 class="text-warning mb-5 mt-0">Magnifiques peluches personnalisables. Douceur et câlins assurés dans ce cadeau plein d'affection</h1>
+                </div>
+                <div id="listProduct" class="row">
+                    <!--insertion du HTML qui se trouve dans le JS-->
+                </div>
+            </div> 
+        </main>
+
+    <!---Footer -->
+        <footer class="bg-secondary container-fluid pb-3">
+            <div class="col pt-4">
+                <ul class="list-inline text-center ">
+                    <li class="list-inline-item "><a href="#" class="text-warning font-weight-bold lead">À propos</a></li>
+                    <li class="list-inline-item"><a href="#" class="text-warning font-weight-bold lead">Vie privée</a></li>
+                    <li class="list-inline-item"><a href="#" class="text-warning font-weight-bold lead">Conditions d'utilisations</a></li>
+                </ul>
+            </div>
+        </footer>
+
+    <!--mes scripts-->
+        <script src="js/config.js"></script>
+        <script src="js/teddyBears.js"></script>
+        <script src="js/calculQuantity.js"></script>
+        <script src="js/index.js"></script>
+    <!--script de bootstrap et jquery-->
+        <script src="js/jquery.js"></script>
+        <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+        
+    </body>
+</html>

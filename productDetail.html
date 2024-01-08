@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="description détaillée de cette splendide peluche douce. Beaucoup de calins et d'amour dans cet affectueux cadeau">
+        
+        <meta property="og:site_name" content="Orinoco"/>
+        <meta property="og:type" content="site web"/>
+        <meta property="og:url" content="https://chaplin16.github.io/RamosAurore_5_28122020/">
+        <meta property="og:title" content="tres douces peluches personnalisables"/>
+        <meta property="og:description" content="beaucoup de calins et d affection de la part de ces peluches qui feront le bonheur de tous" />
+        
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+        <title>ProductDetail</title>
+    </head>
+
+    <body>
+    <!--header-->
+        <header class="container-fluid text-center bg-secondary">
+            <figure class="figure w-50">
+                <img class="img-fluid img-thumbnail border border-warning" src="img/teddyBear-header.jpg" alt="nounours">
+            </figure>
+            <div class="row">
+                <nav class="col navbar navbar-expand navbar-dark">
+                    <h1>
+                      <img class="navbar-brand img-fluid" src="img/logoOrinoco.png" width="250" alt="logo d'Orinoco">
+                    </h1>    
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <ul class="navbar-nav font-weight-bold w-100 justify-content-end lead">
+                        <li class="nav-item active">
+                            <a class="nav-link text-warning " href="index.html">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-warning font-weight-bold" href="orderAndForm.html">Panier</a>
+                            <img class="ml-3" src="img/cart_icon_128475.svg" alt="panier des achats">
+                            <div class="dropdown">
+                                <div id="cart">
+                                    <p id="quantity-in-cart"></p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+    <!--main-->
+        <main class="d-flex">
+            <div class="jumbotron w-100 mb-0" style="background-image: url(img/background-plush2.jpg);">
+                <div id="containerProductDetail">
+
+                </div>
+            </div>  
+        </main> 
+
+    <!--footer-->
+        <footer class="bg-secondary container-fluid pb-3">
+            <div class="col pt-4">
+                <ul class="list-inline text-center">
+                    <li class="list-inline-item"><a href="#" class="text-warning font-weight-bold">À propos</a></li>
+                    <li class="list-inline-item"><a href="#" class="text-warning font-weight-bold">Vie privée</a></li>
+                    <li class="list-inline-item"><a href="#" class="text-warning font-weight-bold">Conditions d'utilisations</a></li>
+                </ul> 
+            </div>
+        </footer> 
+  
+    <!--mes scripts-->
+        <script src="js/config.js"></script> 
+        <script src="js/productDetail.js"></script>
+        <script src="js/manageBasket.js"></script>
+        <script src="js/calculQuantity.js"></script>
+    <!--script de bootstrap et jquery-->
+        <script src="js/jquery.js"></script>
+        <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+  
+    <!-- Modal lors du click sur commander-->
+        <div class="modal fade" id="windowChoice" tabindex="-1"  aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body font-weight-bold text-center">
+                        La peluche a été ajoutée à votre panier!
+                    </div>
+                    <div class="modal-footer">
+                        <button onclick="window.location.href='index.html';" class="btn btn-warning font-weight-bold">Pousuivre achat</button>
+                        <button onclick="window.location.href='orderAndForm.html';" class="btn btn-warning font-weight-bold">Panier</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="page de confirmation de commande">
+
+        <meta property="og:site_name" content="Orinoco"/>
+        <meta property="og:type" content="site web"/>
+        <meta property="og:url" content="https://chaplin16.github.io/RamosAurore_5_28122020/">
+        <meta property="og:title" content="tres douces peluches personnalisables"/>
+        <meta property="og:description" content="peluches douces, aux differentes coloris apporteront joie et calins chez les petits et grands" />
+        
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+        <title>orderConfirmation</title>
+    </head>
+
+    <body>
+    <!--header-->
+        <header >
+            <div class="container-fluid text-center bg-secondary">
+                <figure class="figure w-50 text-center">
+                    <img class="img-thumbnail img-fluid" src="img/teddyTravel-header.jpg" alt="image en fond d ecran d une peluche">
+                </figure>
+            </div>    
+        </header>
+        
+    <!--main-->
+        <main>
+            <section class="jumbotron w-100 mb-0" style="background-image: url(img/img-gradient.jpg);">
+                <div>
+                    <h1 id="contactName" class="text-center font-weight-bold display-4 pt-5">Félicitations
+                    </h1>
+                    <div class="font-weight-bold text-center mt-3 lead"> 
+                    La commande sera expédiée très rapidement<br>
+                    pour un montant total de
+                        <p class="text-center font-weight-bold lead" id=priceOrder></p>
+                        <p class="text-center mt-3 lead font-weight-bold">Merci d'avoir effectué vos achats chez ORINOCO</p>
+                    </div>
+                    <p class="mt-2 text-center font-weight-bold">
+                        Voici votre numéro de commande: 
+                    </p>
+                    <p class="text-center font-weight-bold lead" id="numberOrder"></p>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-warning border-dark align-items-center font-weight-bold mt-2 mb-4" onclick="window.location.href='index.html';">Retour à la page d'accueil</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+    <!---Footer -->
+        <footer class="bg-secondary container-fluid pb-3 pt-3">
+            <div class="col mb-5">
+                <ul class="list-inline text-center my-4 ">
+                    <li class="list-inline-item"><a href="#" class="text-warning font-weight-bold">À propos</a></li>
+                    <li class="list-inline-item"><a href="#" class="text-warning font-weight-bold">Vie privée</a></li>
+                    <li class="list-inline-item"><a href="#" class="text-warning font-weight-bold">Conditions d'utilisations</a></li>
+                </ul> 
+            </div>
+        </footer>
+
+    <!--mes scripts-->
+        <script src="js/config.js"></script>
+        <script src="js/confirmation.js"></script>
+
+    </body>
+</html>
